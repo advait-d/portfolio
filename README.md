@@ -14,4 +14,9 @@ This is my personal portfolio website built with [Next.js](https://nextjs.org). 
 To run this project locally:
 
 1. Clone the repository
-2. Install dependencies:
+2. Install dependencies: ```npm install```
+3. Run the application: ```npm run dev```
+
+To update the project with your details, modify the content under ```src/components```. 
+
+Create an API Key from [Resend](https://resend.com), and add it to the environment variables as ```RESEND_API_KEY: YOUR_API_KEY``` where your site will be deployed.
