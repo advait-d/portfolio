@@ -23,9 +23,9 @@ const Header: React.FC = () => {
         <div className="absolute inset-0 bg-yellow-100 transform -rotate-0 rounded-xl"></div>
         <div className="relative p-3">
           <p className="text-gray-800 text-medium font-semibold">
-            Currently Seeking New Opportunities in India
+            Currently Seeking New Opportunities in {/*India
             <span className="mx-1">🇮🇳</span>
-            and the USA
+            and */} the USA
             <span className="mx-1">🇺🇸</span>
             <span className="text-gray-700">(Valid H-1B)</span>
           </p>
