@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     });
 
     await resend.emails.send({
-      from: 'enquiries@advaitdeshmukh.com',
+      from: 'advait.deshmukh3@gmail.com',
       to: 'advait.deshmukh3@gmail.com',
       subject: `New Project Enquiry from ${name}${company ? ` - ${company}` : ''}`,
       html: `

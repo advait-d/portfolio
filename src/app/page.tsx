@@ -49,9 +49,11 @@ export default function Home() {
             <div className="mt-6">
               <SocialLinks />
             </div>
+            {/*
             <div className="mt-6">
               <HireMe />
             </div>
+            */}
           </motion.div>
           <motion.div variants={itemVariants}>
             <About />
@@ -86,9 +88,11 @@ export default function Home() {
             <div className="mt-6">
               <SocialLinks />
             </div>
+            {/*
             <div className="mt-6">
               <HireMe />
             </div>
+            */}
           </div>
         </motion.div>
         {/* Right Column */}

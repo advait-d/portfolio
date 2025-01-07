@@ -19,18 +19,25 @@ const Header: React.FC = () => {
         Turning ideas into solutions that make a difference. <br /> <br />
       </p>
 
-      <div className="relative inline-block">
-        <div className="absolute inset-0 bg-yellow-100 transform -rotate-0 rounded-xl"></div>
-        <div className="relative p-3">
-          <p className="text-gray-800 text-medium font-semibold">
-            Currently Seeking New Opportunities in {/*India
+      <a
+        href="mailto:advait.deshmukh3@gmail.com"
+        className="relative block p3 hover:underline hover:text-blue-600 cursor-pointer "
+      >
+        <div className="relative inline-block">
+          <div className="absolute inset-0 bg-yellow-200 transform -rotate-0 rounded-xl"></div>
+          <div className="relative p-3">
+            <p className="text-gray-800 text-medium font-semibold">
+              Currently Seeking New Opportunities in{" "}
+              {/*India
             <span className="mx-1">🇮🇳</span>
-            and */} the USA
-            <span className="mx-1">🇺🇸</span>
-            <span className="text-gray-700">(Valid H-1B)</span>
-          </p>
+            and */}{" "}
+              the USA
+              <span className="mx-1">🇺🇸</span>
+              <span className="text-gray-700">(Valid H-1B)</span>
+            </p>
+          </div>
         </div>
-      </div>
+      </a>
     </header>
   );
 };
