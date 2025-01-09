@@ -25,11 +25,11 @@ const Header: React.FC = () => {
         </h1>
         
         <h2 className="text-xl text-gray-600 dark:text-gray-400 mb-4">
-          Senior Software Engineer
+          Software Engineer
         </h2>
         
         <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-          📍 Mumbai, India
+          📍 Mumbai, India 🇮🇳
         </h3>
         
         <p className="text-gray-700 dark:text-gray-300 text-sm">
