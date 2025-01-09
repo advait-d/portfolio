@@ -79,7 +79,7 @@ const experiences: Job[] = [
 const Experience: React.FC = () => {
   return (
     <section id="experience" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6 text-gray-100">Experience</h2>
+      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">Experience</h2>
       <div className="space-y-6">
         {experiences.map((job, index) => (
           <div
@@ -101,16 +101,16 @@ const Experience: React.FC = () => {
                 </div>
               </div>
               <div className="flex-grow">
-                <h3 className="text-2xl font-semibold text-gray-100">
+                <h3 className="text-2xl font-semibold text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
                   {job.title}
                 </h3>
-                <p className="text-lg text-gray-300">
+                <p className="text-lg text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
                   {job.company}, {job.location}
                 </p>
-                <p className="text-gray-400">{job.period}</p>
+                <p className="text-black dark:text-gray-400  bg-white dark:bg-[#111111]">{job.period}</p>
               </div>
             </div>
-            <ul className="space-y-2 text-gray-300 mb-4">
+            <ul className="space-y-2 text:black dark:text-gray-300 mb-4">
               {job.description}
               {/*{job.description.map((point, pointIndex) => (
                 <li key={pointIndex} className="flex items-start">

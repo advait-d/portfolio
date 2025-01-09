@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/app/ThemeToggle";
 import React from "react";
 
 const calculateAge = (birthDate: Date): number => {
@@ -16,25 +17,27 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="mb-8">
-      <h2 className="text-3xl font-bold mb-6 text-gray-100">About Me</h2>
-      <p className="text-gray-300 mb-4">
+      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
+        About Me
+      </h2>
+      <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
         Hi, I&#39;m Advait! ✋ <br /> <br />
         I&#39;m a software engineer with over 4 years of experience building web
         applications and backend systems that solve real-world problems.
       </p>
-      <p className="text-gray-300 mb-4">
-        I&#39;ve worked across industries like retail tech and healthcare, with
-        stints at Amazon and Perficient, as well as startups, gaining hands-on
-        experience in everything from designing scalable systems to delivering
-        features that make a difference.
+      <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
+        I&#39;ve worked across industries like retail tech, healthcare, along
+        with startups, gaining hands-on experience in everything from designing
+        scalable systems to delivering features that make a difference.
       </p>
-      <p className="text-gray-300 mb-4">
-        I enjoy working with tools across the entire stack, including Java,
-        Python, Spring Boot, React, and Angular, and I&#39;m always excited to
-        dive into new challenges—whether it&#39;s cloud technologies like AWS or
-        exploring AI and distributed systems.
+      <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
+        I enjoy working with tools across the Full Stack, including Java,
+        Python, Spring Boot, Angular, React, and NextJS &#40;that I used to build
+        this website&#41;. I&#39;m always excited to work on projects that involve
+        working with cloud technologies like AWS, exploring AI, and Distributed
+        Systems.
       </p>
-      <p className="text-gray-300 mb-6">
+      <p className="mb-6 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
         Outside of work, you&#39;ll find me chasing experiences, staying active,
         and finding creative ways to grow both personally and professionally.
       </p>

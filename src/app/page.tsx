@@ -35,7 +35,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] text-white">
+    <div className="min-h-screen bg-white text-black dark:bg-[#111111] dark:text-white transition-colors duration-200">
       {/* Mobile Layout (visible below 1024px) */}
       <div className="lg:hidden">
         <motion.main
