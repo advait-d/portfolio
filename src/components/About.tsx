@@ -22,24 +22,22 @@ const About: React.FC = () => {
       </h2>
       <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
         Hi, I&#39;m Advait! ✋ <br /> <br />
-        I&#39;m a software engineer with over 4 years of experience building web
-        applications and backend systems that solve real-world problems.
+        I&#39;m a software engineer with over 4 years of experience building Web
+        Applications and Backend Systems to solve practical challenges.
       </p>
       <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-        I&#39;ve worked across industries like retail tech, healthcare, along
-        with startups, gaining hands-on experience in everything from designing
-        scalable systems to delivering features that make a difference.
+        My experience spans retail tech, healthcare, and startups, where
+        I&#39;ve designed scalable systems and delivered impactful features.
       </p>
       <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-        I enjoy working with tools across the Full Stack, including Java,
-        Python, Spring Boot, Angular, React, and NextJS &#40;that I used to build
-        this website&#41;. I&#39;m always excited to work on projects that involve
-        working with cloud technologies like AWS, exploring AI, and Distributed
-        Systems.
+        I enjoy working across the full stack with tools like Java, Python,
+        Spring Boot, Angular, React, and Next.js &#40;which I used to build this
+        website&#41;. I&#39;m particularly excited by projects
+        involving cloud technologies like AWS, AI, and Distributed Systems.
       </p>
       <p className="mb-6 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-        Outside of work, you&#39;ll find me chasing experiences, staying active,
-        and finding creative ways to grow both personally and professionally.
+        When  I'm not coding, I&#39;m exploring new places and experiences, staying active,
+        and pursuing growth both personally and professionally.
       </p>
     </section>
   );
