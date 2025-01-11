@@ -21,7 +21,7 @@ const experiences: Job[] = [
     description: [
       "Deliver full-stack engineering solutions to clients, including a custom Resource Management System (RMS), automate customer enquiries with AI-powered chatbot, streamline CI/CD pipelines, along with leading a team of software engineers with best Agile practices.",
     ],
-    logo: "/WVIT.png",
+    logo: "/WVITlogo.jpg",
     skills: [
       "Java",
       "Spring Boot",
@@ -87,9 +87,8 @@ const Experience: React.FC = () => {
             className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600"
           >
             <div className="flex items-start mb-2">
-              <div className="bg-white rounded-full p-2 mr-4 w-24 h-24 flex-shrink-0">
+              <div className="bg-white rounded-full p-2 mr-4 w-24 h-24 border border-gray dark:border-gray-200 flex-shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden">
-                  {" "}
                   <Image
                     src={job.logo}
                     alt={`${job.company} logo`}

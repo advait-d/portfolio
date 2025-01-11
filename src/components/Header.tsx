@@ -42,8 +42,10 @@ const Header: React.FC = () => {
         >
           <div className="relative p-3 rounded-xl transition-colors duration-300 bg-blue-500 group-hover:bg-blue-600 dark:bg-blue-500 dark:group-hover:bg-blue-400">
             <p className="text-white dark:text-gray-900 font-semibold">
-              Reach Out! Seeking Software Engineering Roles in the USA
-              <span className="mx-1">🇺🇸</span>
+              Reach Out! Seeking Software Engineering Roles in India
+              {/*<span className="mx-1">🇮🇳</span>*/}
+              <span className="text-white dark:text-gray-900"> and the USA </span>
+              {/*<span className="mx-1">🇺🇸</span>*/}
               <span className="text-white dark:text-gray-900">
                 &#40;Valid H-1B&#41;
               </span>
