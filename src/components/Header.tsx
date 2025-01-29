@@ -7,10 +7,6 @@ const Header: React.FC = () => {
   return (
     <header className="w-full py-4 transition-colors duration-200 dark:bg-[#111111] bg-white">
       <div className="flex flex-col">
-        <div className="absolute top-4 left-4">
-          <ThemeToggle />
-        </div>
-
         <div className="mb-4 relative w-[150px] h-[150px] overflow-hidden rounded-full">
           <Image
             src="/profile-image.jpg"

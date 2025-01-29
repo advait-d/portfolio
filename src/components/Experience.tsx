@@ -16,12 +16,12 @@ const experiences: Job[] = [
   {
     title: "Senior Software Engineer",
     company: "World Vision Infotech Pvt Ltd",
-    location: "Remote, India",
+    location: "Pune, India",
     period: "Jan 2024 - Present",
     description: [
       "Deliver full-stack engineering solutions to clients, including a custom Resource Management System (RMS), automate customer enquiries with AI-powered chatbot, streamline CI/CD pipelines, along with leading a team of software engineers with best Agile practices.",
     ],
-    logo: "/WVITlogo.jpg",
+    logo: "/company logos/WVIT.png",
     skills: [
       "Java",
       "Spring Boot",
@@ -42,9 +42,9 @@ const experiences: Job[] = [
     location: "Redmond, Washington, USA",
     period: "April 2022 - December 2023",
     description: [
-      "Develop and maintain robust back-end systems for high-volume API processing and data analytics applications within the healthcare industry. Partner with cross-functional teams to optimize legacy systems, automate testing and workflows, and improve system performance, ensuring scalability and high availability across diverse use cases.",
+      "Develop and maintain robust back-end systems for high-volume Data Processing APIs and Data Analytics applications within the Healthcare Industry. Partner with cross-functional teams to optimize legacy systems, automate testing and workflows, and improve system performance, ensuring scalability and high availability across diverse use cases.",
     ],
-    logo: "/Perficient_Logo.png",
+    logo: "/company logos/Perficient_Logo.png",
     skills: [
       "Java",
       "Spring Boot",
@@ -63,7 +63,7 @@ const experiences: Job[] = [
     description: [
       "Build and maintain scalable solutions for internal risk mitigation services, including CAPTCHAs and challenges. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and improve risk mitigation solutions.",
     ],
-    logo: "/amazon-logo.png",
+    logo: "/company logos/amazon-logo.png",
     skills: [
       "Java",
       "Spring MVC",
@@ -104,7 +104,7 @@ const Experience: React.FC = () => {
                   {job.title}
                 </h3>
                 <p className="text-lg text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-                  {job.company}, {job.location}
+                  {job.company} - {job.location}
                 </p>
                 <p className="text-black dark:text-gray-400  bg-white dark:bg-[#111111]">{job.period}</p>
               </div>

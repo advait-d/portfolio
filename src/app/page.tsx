@@ -11,6 +11,7 @@ import Education from "../components/Education";
 import Footer from "../components/Footer";
 import HireMe from "../components/HireMe";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Home() {
   const containerVariants = {
@@ -126,6 +127,9 @@ export default function Home() {
           </motion.main>
           <Footer />
         </motion.div>
+      </div>
+      <div className="absolute top-4 right-4 lg:top-8 lg:right-8">
+        <ThemeToggle />
       </div>
     </div>
   );

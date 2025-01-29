@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import React from "react";
+import Image from "next/image";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const educationData = [
   {
@@ -17,9 +17,9 @@ const educationData = [
       "CSE 574 Introduction to Machine Learning",
       "CSE 586 Distributed Systems",
       "CSE 676 Deep Learning",
-      "CSE 700 Independent Study - Text-To-Image Synthese using Generative Adversarial Networks",
-      "CSE 711: Static and Dynamic Analysis of Android Applications"
-    ]
+      "CSE 700 Independent Study - Text-To-Image Synthesis using Generative Adversarial Networks",
+      "CSE 711: Static and Dynamic Analysis of Android Applications",
+    ],
   },
   {
     degree: "Bachelor of Engineering, Computer Engineering",
@@ -72,31 +72,42 @@ const educationData = [
       "CPE8035 Elective III :- Big Data Analytics",
       "CPL801 Cloud Computing Laboratory",
       "CPP802 Project-II - Prediction of Bus Arrival Time using GPS",
-    ]
-  }
+    ],
+  },
 ];
 
 const Education: React.FC = () => {
   return (
     <section id="education" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">Education</h2>
+      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
+        Education
+      </h2>
       <ul className="space-y-6">
         {educationData.map((edu, index) => (
-          <li key={index} className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
+          <li
+            key={index}
+            className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600"
+          >
             <div className="flex items-start mb-2">
-              <div className="bg-white rounded-full p-2 mr-4 w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center overflow-hidden">
-                <Image 
-                  src={edu.image} 
-                  alt={`${edu.university} logo`} 
-                  width={80} 
-                  height={80} 
+              <div className="bg-white rounded-full p-2 mr-4 w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center overflow-hidden border border-gray dark:border-gray-200">
+                <Image
+                  src={edu.image}
+                  alt={`${edu.university} logo`}
+                  width={80}
+                  height={80}
                   className="object-contain w-12 h-12 sm:w-20 sm:h-20"
                 />
               </div>
               <div className="flex-grow">
-                <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-gray-100  bg-white dark:bg-[#111111]">{edu.degree}</h3>
-                <p className="text-base sm:text-lg text-black dark:text-gray-300  bg-white dark:bg-[#111111]">{edu.university}</p>
-                <p className="text-sm sm:text-base text-black dark:text-gray-400  bg-white dark:bg-[#111111]">{edu.period}</p>
+                <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
+                  {edu.degree}
+                </h3>
+                <p className="text-base sm:text-lg text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
+                  {edu.university}
+                </p>
+                <p className="text-sm sm:text-base text-black dark:text-gray-400  bg-white dark:bg-[#111111]">
+                  {edu.period}
+                </p>
                 <details className="mt-2">
                   <summary className="cursor-pointer text-gray-600 dark:text-gray-300  bg-white dark:bg-[#111111] hover:text-black dark:hover:text-white transition-colors duration-300 flex items-center">
                     <FaChevronDown className="mr-2 inline-block details-open:hidden" />
@@ -105,7 +116,10 @@ const Education: React.FC = () => {
                   </summary>
                   <ul className="mt-4 ml-4 space-y-2">
                     {edu.units.map((unit, unitIndex) => (
-                      <li key={unitIndex} className="text-black dark:text-gray-300">
+                      <li
+                        key={unitIndex}
+                        className="text-black dark:text-gray-300"
+                      >
                         • {unit}
                       </li>
                     ))}
