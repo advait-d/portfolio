@@ -1,6 +1,4 @@
-//src/app/blog/[slug]/page.tsx
-import { getPostBySlug } from "@/lib/mdx";
-import { MDXRemote } from "next-mdx-remote";
+import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { serialize } from "next-mdx-remote/serialize";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
@@ -9,28 +7,14 @@ import Link from "next/link";
 import { ThemeToggle } from "@/app/ThemeToggle";
 import MDXContent from "@/components/MDXContent";
 import BlogFooterNavigation from "@/components/BlogFooterNavigation";
+import type { BlogPostType } from "@/types/blog";
 
-export async function generateStaticParams() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`);
-  const posts = await response.json();
-  return posts.map((post: { slug: string }) => ({
-    slug: post.slug,
-  }));
+interface PageProps {
+  params: Promise<{ slug: string }>;
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const resolvedParams = await Promise.resolve(params);
-
-  if (!resolvedParams?.slug) {
-    notFound();
-  }
-
-  const slug = resolvedParams.slug;
-
+export default async function BlogPost({ params }: PageProps) {
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -80,19 +64,6 @@ export default async function BlogPost({
                 </div>
 
                 <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-                {/*
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                  <Image
-                    src="/profile-image.jpg"
-                    alt={post.author || "Author"}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <span className="font-medium">{post.author || "Author"}</span>
-              </div>
-              */}
               </div>
             </header>
 
@@ -104,9 +75,27 @@ export default async function BlogPost({
 
           {/* Footer Navigation */}
           <BlogFooterNavigation />
-
         </div>
       </div>
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: PageProps) {
+    const { slug } = await params
+    const post = await getPostBySlug(slug)
+    if (!post) {
+      return { title: "Not Found" }
+    }
+    return {
+      title: post.title,
+      description: post.excerpt,
+    }
+  }

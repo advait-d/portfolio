@@ -1,18 +1,23 @@
 // src/app/api/posts/[slug]/route.ts
-import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { notFound } from "next/navigation";
 
 export async function GET(
-  request: Request,
-  context: { params: { slug: string } }
-  //{ params }: { params: { slug: string } }
+  request: NextRequest,
 ) {
   try {
-    const resolvedParams = await Promise.resolve(context.params);
-    const slug = resolvedParams.slug;
+    const url = new URL(request.url)
+    const slug = url.pathname.split("/").pop()
+
+    if (!slug) {
+      return new Response("Slug is required", { status: 400 })
+    }
+    if (!slug) {
+      return new Response("Slug is required", { status: 400 });
+    }
+
     const postsDirectory = path.join(
       process.cwd(),
       "src",
@@ -20,13 +25,11 @@ export async function GET(
       "blog",
       "posts"
     );
-    if (!slug) {
-      return new NextResponse(null, { status: 400 });
-    }
+
     const filePath = path.join(postsDirectory, `${slug}.mdx`);
 
     if (!fs.existsSync(filePath)) {
-      return new NextResponse(null, { status: 404 });
+      return new Response("Post not found", { status: 404 });
     }
 
     const fileContents = fs.readFileSync(filePath, "utf8");
@@ -38,12 +41,11 @@ export async function GET(
       content,
     };
 
-    return NextResponse.json(post);
+    return new Response(JSON.stringify(post), {
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (err) {
     console.error("Error in GET /api/posts/[slug]:", err);
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
+    return new Response("Internal Server Error", { status: 500 });
   }
 }
