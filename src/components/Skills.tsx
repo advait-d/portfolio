@@ -3,11 +3,11 @@ import { ChipList, SkillCategory } from './Chips';
 
 const skills: { [key in SkillCategory]: string[] } = {
   languages: ['Python', 'Java','JavaScript', 'TypeScript', 'HTML', 'CSS', 'C'],
-  frameworks: ['REST APIs','Spring Framework', 'Flask', 'Django', 'ReactJS', 'NextJS', 'Angular','Ionic',],
-  AI: ['TensorFlow', 'PyTorch', 'Keras', 'OpenAI API', 'codellama', 'Jupyter Notebooks'],
+  frameworks: ['Spring Framework', 'Flask', 'Django', 'ReactJS', 'NextJS', 'Angular','Ionic',],
+  AI: ['TensorFlow', 'PyTorch', 'Keras', 'OpenAI API', 'Jupyter Notebooks'],
   databases: ['PostgreSQL', 'MySQL', 'Oracle SQL', 'DynamoDB', 'MongoDB'],
   tools: ['Docker', 'Kubernetes', 'Git', 'Kafka', 'Postman', 'OpenAPI', 'Grafana', 'Splunk'],
-  architectures: ['Microservices', 'Microfrontend', 'Backend for Frontend']
+  architectures: ['RESTful APIs','Microservices', 'Microfrontend', 'Backend for Frontend']
 };
 
 const Skills: React.FC = () => {

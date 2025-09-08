@@ -25,7 +25,6 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-[#111111] text-black dark:text-white">
-      <div className="absolute inset-0 overflow-auto">
         <div className="max-w-4xl mx-auto px-4 py-8 relative">
           {/* Navigation */}
           <div className="flex items-center justify-between mb-12 sticky top-0 bg-white dark:bg-[#111111] z-10 py-4">
@@ -77,7 +76,6 @@ export default async function BlogPost({ params }: PageProps) {
           <BlogFooterNavigation />
         </div>
       </div>
-    </div>
   );
 }
 

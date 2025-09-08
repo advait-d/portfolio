@@ -36,7 +36,8 @@ body.dark {
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
+  scroll-padding-top: 6rem; /* Adjust based on your header height */
 }
 
 /* Allow scrolling on the main content area */
@@ -79,4 +80,15 @@ main::-webkit-scrollbar-thumb:hover {
   /* Adjust duration and timing function as needed */
   white-space: nowrap;
   /* Prevent text from wrapping */
+}
+
+.markdown-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Back to top button positioning */
+button[class*="flex items-center"] {
+  position: sticky;
+  bottom: 20px;
 }

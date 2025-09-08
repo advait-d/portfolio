@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         </h2>
 
         <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-          📍 Mumbai, India 🇮🇳
+          📍 Bangalore (Bengaluru), India 🇮🇳
         </h3>
 
         <p className="text-gray-700 dark:text-gray-300 text-sm">
@@ -38,7 +38,8 @@ const Header: React.FC = () => {
         >
           <div className="relative p-3 rounded-xl transition-colors duration-300 bg-blue-500 group-hover:bg-blue-600 dark:bg-blue-500 dark:group-hover:bg-blue-400">
             <p className="text-white dark:text-gray-900 font-semibold">
-              Reach Out! Seeking Software Engineering Roles
+              REACH OUT! <br></br>
+              Seeking Software Engineering Roles in the USA! H-1B Visa Holder 🇺🇸
               {/*<span className="mx-1">🇮🇳</span>
               <span className="text-white dark:text-gray-900"> and the USA </span>
               <span className="mx-1">🇺🇸</span>
