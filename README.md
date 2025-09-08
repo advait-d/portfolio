@@ -1,7 +1,7 @@
 # Advait Deshmukh's Portfolio
 ![alt text](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![alt text](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![alt text](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-This is my personal portfolio website built with [Next.js](https://nextjs.org). It showcases my skills, experience, and projects as a software developer.
+This is my personal portfolio website built with [Next.js](https://nextjs.org). It showcases my skills, experience, and some of my projects as a software developer.
 
 ## 🔥 Features
 
