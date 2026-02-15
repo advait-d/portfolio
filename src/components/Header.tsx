@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         </h2>
 
         <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-          📍 Bangalore (Bengaluru), India 🇮🇳
+          📍 Bangalore, India 🇮🇳
         </h3>
 
         <p className="text-gray-700 dark:text-gray-300 text-sm">
