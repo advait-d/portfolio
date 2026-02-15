@@ -39,7 +39,7 @@ const Header: React.FC = () => {
           <div className="relative p-3 rounded-xl transition-colors duration-300 bg-blue-500 group-hover:bg-blue-600 dark:bg-blue-500 dark:group-hover:bg-blue-400">
             <p className="text-white dark:text-gray-900 font-semibold">
               REACH OUT! <br></br>
-              Seeking Software Engineering Roles in the USA! H-1B Visa Holder 🇺🇸
+              Seeking Back-end Software Engineering and AI Roles in Bangalore, Pune, and Mumbai. Open to remote opportunities!
               {/*<span className="mx-1">🇮🇳</span>
               <span className="text-white dark:text-gray-900"> and the USA </span>
               <span className="mx-1">🇺🇸</span>
