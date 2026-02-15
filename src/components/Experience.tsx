@@ -25,9 +25,9 @@ const experiences: Job[] = [
     skills: [
       "Java",
       "Spring Boot",
-      "Jenkins",
+      "Azure DevOps",
       "PostgreSQL",
-      "AWS",
+      "GraphQL",
     ],
   },
   {
