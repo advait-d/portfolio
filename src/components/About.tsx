@@ -22,15 +22,15 @@ const About: React.FC = () => {
       </h2>
       <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
         Hi, I&#39;m Advait! ✋ <br /> <br />
-        I&#39;m a software engineer with over 4.5 years of experience building Web
-        Applications and Backend Systems to solve practical challenges.
+        I&#39;m a software engineer with over 5 years of experience building Web
+        Applications and Backend Systems that have solved practical challenges.
       </p>
       <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-        My experience spans retail tech, healthcare, and startups, where
+        My experience spans retail tech, healthcare, travel, and banking, where
         I&#39;ve designed scalable systems and delivered impactful features.
       </p>
       <p className="mb-4 text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-        I enjoy working across the full stack with tools like Java, Python,
+        I'm primarily a back-end developer, but I also enjoy working across the full stack with tools like Java, Python,
         Spring, React, and Next.js &#40;which I used to build this
         website&#41;. I&#39;m particularly excited by projects
         involving cloud technologies like AWS, AI, and Distributed Systems.

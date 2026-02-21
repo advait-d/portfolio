@@ -112,7 +112,7 @@ const Education: React.FC = () => {
                   <summary className="cursor-pointer text-gray-600 dark:text-gray-300  bg-white dark:bg-[#111111] hover:text-black dark:hover:text-white transition-colors duration-300 flex items-center">
                     <FaChevronDown className="mr-2 inline-block details-open:hidden" />
                     <FaChevronUp className="mr-2 hidden details-open:inline-block" />
-                    <span>View Units</span>
+                    <span>Coursework</span>
                   </summary>
                   <ul className="mt-4 ml-4 space-y-2">
                     {edu.units.map((unit, unitIndex) => (
