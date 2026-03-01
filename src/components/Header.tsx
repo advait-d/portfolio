@@ -28,15 +28,13 @@ const Header: React.FC = () => {
           Turning ideas into solutions that make a difference.
         </p>
 
-        <br>
-        </br>
-        <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-          <br></br>📍 Bangalore, India 🇮🇳
+        <h3 className="text-md text-gray-600 dark:text-gray-400 mt-4 mb-2">
+          📍 Bangalore, India 🇮🇳
         </h3>
 
         <a
           href="mailto:advait.deshmukh3@gmail.com"
-          className="mt-6 relative block cursor-pointer group"
+          className="mt-3 relative block cursor-pointer group"
         >
           <div className="relative rounded-lg overflow-hidden transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 dark:from-blue-400/5 dark:to-cyan-400/5"></div>
