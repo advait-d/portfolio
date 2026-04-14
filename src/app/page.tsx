@@ -26,27 +26,36 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Intersection observer for active section tracking
+  // Scroll-based active section tracking
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      let currentSection = SECTIONS[0];
 
-    SECTIONS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
+      for (const id of SECTIONS) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        // A section is "active" when its top is at or above ~40% of the viewport
+        if (rect.top <= viewportHeight * 0.4) {
+          currentSection = id;
+        }
+      }
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(id);
-          }
-        },
-        { rootMargin: "-20% 0px -60% 0px" }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    });
+      // If scrolled to the very bottom, activate the last section
+      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 50) {
+        currentSection = SECTIONS[SECTIONS.length - 1];
+      }
 
-    return () => observers.forEach((o) => o.disconnect());
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once on mount to set initial active section
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const containerVariants = {
