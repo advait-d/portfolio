@@ -14,8 +14,8 @@ export default function BlogPost({ post }: BlogPostProps) {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
       }}
-      className="bg-white dark:bg-[#1A1A1A] rounded-lg shadow-md overflow-hidden 
-                 hover:shadow-lg transition-shadow duration-300"
+      className="bg-[#112240] rounded-lg overflow-hidden border border-[#233554] 
+                 hover:border-[#64ffda]/30 transition-all duration-300 group"
     >
       {post.imageUrl && (
         <div className="relative h-48 w-full">
@@ -23,30 +23,29 @@ export default function BlogPost({ post }: BlogPostProps) {
             src={post.imageUrl}
             alt={post.title}
             fill
-            className="object-cover"
+            className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
           />
         </div>
       )}
       <div className="p-6">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+          <span className="text-sm text-[#64ffda] font-medium">
             {post.category}
           </span>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <span className="text-sm text-[#8892b0]">
             {post.date}
           </span>
         </div>
-        <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+        <h2 className="text-xl font-semibold text-[#ccd6f6] mb-2 group-hover:text-[#64ffda] transition-colors duration-300">{post.title}</h2>
+        <p className="text-[#8892b0] mb-4">{post.excerpt}</p>
         <div className="flex items-center justify-between">
           <Link
             href={`/blog/${post.slug}`}
-            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 
-                     dark:hover:text-blue-300 font-medium transition-colors duration-200"
+            className="text-[#64ffda] hover:underline font-medium transition-colors duration-200"
           >
             Read more →
           </Link>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <span className="text-sm text-[#8892b0]">
             {post.readTime}
           </span>
         </div>

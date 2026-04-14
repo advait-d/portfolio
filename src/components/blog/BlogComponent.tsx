@@ -39,11 +39,11 @@ export default function BlogComponent() {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="text-[#8892b0]">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="text-red-400">Error: {error}</div>;
   }
 
   return (
@@ -51,8 +51,7 @@ export default function BlogComponent() {
       <div className="flex items-center justify-between mb-12">
         <Link
           href="/"
-          className="text-gray-600 dark:text-gray-300 hover:text-gray-900 
-                   dark:hover:text-white transition-colors duration-200"
+          className="text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200"
         >
           ← Back to Portfolio
         </Link>
@@ -61,7 +60,7 @@ export default function BlogComponent() {
       <div className="space-y-8">
         {/* Title and Search Bar in same line */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <h1 className="text-4xl font-bold">Blog</h1>
+          <h1 className="text-4xl font-bold text-[#ccd6f6]">Blog</h1>
           <div className="w-full sm:w-auto max-w-md">
             <SearchBar
               searchQuery={searchQuery}
@@ -91,7 +90,7 @@ export default function BlogComponent() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center text-gray-600 dark:text-gray-400 mt-8"
+            className="text-center text-[#8892b0] mt-8"
           >
             No posts found matching your search.
           </motion.div>

@@ -34,12 +34,12 @@ export default function BlogFooterNavigation() {
   };
 
   return (
-    <footer className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+    <footer className="mt-12 pt-6 border-t border-[#233554]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <Link
             href="/blog"
-            className="flex items-center text-primary hover:text-primary/80 transition-colors duration-200"
+            className="flex items-center text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to all posts
@@ -50,7 +50,7 @@ export default function BlogFooterNavigation() {
               variant="outline"
               size="sm"
               onClick={scrollToTop}
-              className="flex items-center shadow-lg dark:shadow-gray-800/50"
+              className="flex items-center border-[#233554] text-[#8892b0] hover:text-[#64ffda] hover:border-[#64ffda]/30"
             >
               <ArrowUp className="mr-2 h-4 w-4" />
               Back to top

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeToggle } from "@/app/ThemeToggle";
 import MDXContent from "@/components/MDXContent";
 import BlogFooterNavigation from "@/components/BlogFooterNavigation";
 import type { BlogPostType } from "@/types/blog";
@@ -24,21 +23,20 @@ export default async function BlogPost({ params }: PageProps) {
   const mdxSource = await serialize(post.content || "");
 
   return (
-    <div className="relative min-h-screen bg-white dark:bg-[#111111] text-black dark:text-white">
+    <div className="relative min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-8 relative">
           {/* Navigation */}
-          <div className="flex items-center justify-between mb-12 sticky top-0 bg-white dark:bg-[#111111] z-10 py-4">
+          <div className="flex items-center justify-between mb-12 sticky top-0 bg-[#0a192f] z-10 py-4">
             <Link
               href="/blog"
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+              className="text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200"
             >
               ← Blog Posts
             </Link>
-            <ThemeToggle />
           </div>
 
           {/* Article */}
-          <article className="prose dark:prose-invert prose-lg max-w-none">
+          <article className="prose prose-invert prose-lg max-w-none">
             {/* Header */}
             <header className="mb-8">
               {post.imageUrl && (
@@ -54,7 +52,7 @@ export default async function BlogPost({ params }: PageProps) {
               )}
 
               <div className="space-y-4">
-                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center gap-4 text-sm text-[#8892b0]">
                   <span>{post.category}</span>
                   <span>•</span>
                   <span>{format(new Date(post.date), "MMMM d, yyyy")}</span>
@@ -62,7 +60,7 @@ export default async function BlogPost({ params }: PageProps) {
                   <span>{post.readTime}</span>
                 </div>
 
-                <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+                <h1 className="text-4xl font-bold text-[#ccd6f6]">{post.title}</h1>
               </div>
             </header>
 

@@ -3,7 +3,6 @@
 import React from "react";
 import BlogComponent from "@/components/blog/BlogComponent";
 import { motion } from "framer-motion";
-import { ThemeToggle } from "../ThemeToggle";
 
 export default function BlogPage() {
   const containerVariants = {
@@ -28,7 +27,7 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white text-black dark:bg-[#111111] dark:text-white">
+    <div className="relative min-h-screen">
       <div className="absolute inset-0 overflow-auto">
         {/* Mobile Layout (visible below 1024px) */}
         <div className="lg:hidden">
@@ -57,9 +56,6 @@ export default function BlogPage() {
             </motion.div>
           </motion.main>
         </div>
-      </div>
-      <div className="fixed top-4 right-4 lg:top-8 lg:right-8 z-50">
-        <ThemeToggle />
       </div>
     </div>
   );
