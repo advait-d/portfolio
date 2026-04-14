@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import About from "../components/About";
 import Skills from "../components/Skills";
