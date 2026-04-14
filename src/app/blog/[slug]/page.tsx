@@ -1,4 +1,5 @@
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import { serialize } from "next-mdx-remote/serialize";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import Image from "next/image";
@@ -19,6 +20,8 @@ export default async function BlogPost({ params }: PageProps) {
     notFound();
   }
 
+  const mdxSource = await serialize(post.content || "");
+
   return (
     <div className="relative min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-8 relative">
@@ -35,7 +38,7 @@ export default async function BlogPost({ params }: PageProps) {
           {/* Article */}
           <article className="prose prose-invert prose-lg max-w-none">
             {/* Header */}
-            <header className="mb-8 not-prose">
+            <header className="mb-8">
               {post.imageUrl && (
                 <div className="relative w-full h-[400px] mb-6 rounded-lg overflow-hidden">
                   <Image
@@ -61,9 +64,9 @@ export default async function BlogPost({ params }: PageProps) {
               </div>
             </header>
 
-            {/* MDX Content — pass raw string to RSC-based MDXContent */}
+            {/* MDX Content */}
             <div className="markdown-content">
-              <MDXContent source={post.content || ""} />
+              <MDXContent source={mdxSource} />
             </div>
           </article>
 
