@@ -8,6 +8,11 @@ import MDXContent from "@/components/MDXContent";
 import BlogFooterNavigation from "@/components/BlogFooterNavigation";
 import type { BlogPostType } from "@/types/blog";
 
+// Skip static prerendering — next-mdx-remote v6 client MDXRemote uses hooks
+// that conflict with Next.js 15's static prerender worker.
+// Dynamic rendering also ensures blog content is always fresh from the API.
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
