@@ -1,4 +1,4 @@
-// ResumeButton.tsx
+// BlogButton.tsx
 "use client";
 
 import React from "react";
@@ -9,10 +9,10 @@ const BlogButton: React.FC = () => {
   return (
     <Link
       href="/blog"
-      className="flex items-center bg-white dark:bg-black hover:bg-black dark:hover:bg-white text-black dark:text-white hover:text-white dark:hover:text-black px-3 py-1 rounded transition duration-300"
+      className="flex items-center border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 px-3 py-1.5 rounded text-sm transition duration-300"
     >
-      <LucideClipboardPen size={18} />
-        &nbsp;Blog
+      <LucideClipboardPen size={14} className="mr-1.5" />
+      Blog
     </Link>
   );
 };

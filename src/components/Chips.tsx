@@ -13,20 +13,10 @@ interface ChipProps {
   category: SkillCategory;
 }
 
-const categoryColors: Record<SkillCategory, { bg: string; text: string }> = {
-  languages: { bg: "bg-blue-500", text: "text-blue-500" },
-  frameworks: { bg: "bg-green-500", text: "text-green-500" },
-  databases: { bg: "bg-cyan-500", text: "text-cyan-500" },
-  architectures: { bg: "bg-yellow-500", text: "text-yellow-500" },
-  AI: { bg: "bg-lime-500", text: "text-lime-500" },
-  tools: { bg: "bg-emerald-500", text: "text-emerald-500" },
-};
-
-export const Chip: React.FC<ChipProps> = ({ text, category }) => {
-  const { bg, text: textColor } = categoryColors[category];
+export const Chip: React.FC<ChipProps> = ({ text }) => {
   return (
     <span
-      className={`inline-block ${bg} bg-opacity-30 px-3 py-1.5 text-xs font-medium ${textColor} mr-2 mb-2 rounded-full`}
+      className="inline-block bg-[#64ffda]/10 px-3 py-1.5 text-xs font-medium text-[#64ffda] mr-2 mb-2 rounded-full"
     >
       {text}
     </span>

@@ -1,94 +1,165 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --navy: #0a192f;
+  --navy-light: #112240;
+  --navy-lightest: #233554;
+  --slate: #8892b0;
+  --slate-light: #a8b2d1;
+  --slate-lightest: #ccd6f6;
+  --white: #e6f1ff;
+  --teal: #64ffda;
+  --teal-dim: rgba(100, 255, 218, 0.1);
+
+  /* Mouse position CSS vars (updated by JS) */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 17, 17, 17;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+html, body {
+  height: 100%;
+  overflow: auto;
 }
 
 body {
   min-height: 100vh;
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-family: "Fira Code", monospace;
+  margin: 0;
+  color: var(--slate);
+  background: var(--navy);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body.dark {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+/* Mouse-following radial gradient overlay */
+.mouse-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(29, 78, 216, 0.15),
+    transparent 80%
+  );
+  transition: background 0.15s ease;
 }
 
-.glow {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+/* Hover spotlight card */
+.spotlight-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
 }
 
-/* Ensure the page takes up at least the full viewport height */
-html,
-body {
-  height: 100%;
-  overflow: auto;
-  scroll-padding-top: 6rem; /* Adjust based on your header height */
+.spotlight-card:hover {
+  background: rgba(100, 255, 218, 0.03);
+  border-color: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 30px -10px rgba(100, 255, 218, 0.08);
 }
 
-/* Allow scrolling on the main content area */
-main {
-  height: 100vh;
-  overflow-y: auto;
+.spotlight-card:hover .card-title {
+  color: var(--teal);
 }
 
-/* Custom scrollbar styles */
-main::-webkit-scrollbar {
+.spotlight-card:hover .card-arrow {
+  transform: translate(4px, -4px);
+  color: var(--teal);
+}
+
+/* Section nav indicator */
+.nav-indicator {
+  width: 2rem;
+  height: 1px;
+  background: var(--slate);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-indicator,
+.nav-link.active .nav-indicator {
+  width: 4rem;
+  background: var(--slate-lightest);
+}
+
+.nav-link:hover .nav-text,
+.nav-link.active .nav-text {
+  color: var(--slate-lightest);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
   width: 8px;
 }
 
-main::-webkit-scrollbar-track {
-  background: #2d3748;
+::-webkit-scrollbar-track {
+  background: var(--navy);
 }
 
-main::-webkit-scrollbar-thumb {
-  background-color: #4a5568;
+::-webkit-scrollbar-thumb {
+  background-color: var(--navy-lightest);
   border-radius: 4px;
 }
 
-main::-webkit-scrollbar-thumb:hover {
-  background-color: #718096;
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--slate);
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar utility */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
+/* Teal link style */
+a.teal-link {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.teal-link:hover {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+/* Marquee animation */
 .animate-marquee {
   animation: marquee 10s linear infinite;
-  /* Adjust duration and timing function as needed */
   white-space: nowrap;
-  /* Prevent text from wrapping */
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Markdown content */
 .markdown-content {
   position: relative;
   z-index: 1;
 }
 
-/* Back to top button positioning */
-button[class*="flex items-center"] {
-  position: sticky;
-  bottom: 20px;
+/* Selection color */
+::selection {
+  background: rgba(100, 255, 218, 0.2);
+  color: var(--slate-lightest);
 }

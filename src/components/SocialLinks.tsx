@@ -6,8 +6,8 @@ import BlogButton from "./blog/BlogButton";
 
 const SocialLinks: React.FC = () => {
   return (
-    <div className="flex gap-3 items-center">
-      <div className="flex items-center gap-0">
+    <div className="flex gap-4 items-center">
+      <div className="flex items-center gap-3">
         <ResumeButton />
         <BlogButton />
       </div>
@@ -15,23 +15,23 @@ const SocialLinks: React.FC = () => {
         href="https://github.com/advait-d"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-400 hover:text-black dark:hover:text-white"
+        className="text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200"
       >
-        <FaGithub size={24} />
+        <FaGithub size={22} />
       </a>
       <a
         href="mailto:advait.deshmukh3@gmail.com"
-        className="text-gray-400 hover:text-black dark:hover:text-white"
+        className="text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200"
       >
-        <FaEnvelope size={24} />
+        <FaEnvelope size={22} />
       </a>
       <a
         href="https://www.linkedin.com/in/advaitdeshmukh/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-400 hover:text-black dark:hover:text-white"
+        className="text-[#8892b0] hover:text-[#64ffda] transition-colors duration-200"
       >
-        <FaLinkedin size={24} />
+        <FaLinkedin size={22} />
       </a>
     </div>
   );

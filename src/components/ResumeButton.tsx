@@ -9,9 +9,9 @@ const ResumeButton: React.FC = () => {
     <a
       href="/Advait Resume.pdf"
       download
-      className="flex items-center bg-white dark:bg-black hover:bg-black dark:hover:bg-white text-black dark:text-white hover:text-white dark:hover:text-black px-3 py-1 rounded transition duration-300 mr-4 border border-black dark:border-white"
+      className="flex items-center border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 px-3 py-1.5 rounded text-sm transition duration-300"
     >
-      <FaFileDownload size={18} className="mr-2" />
+      <FaFileDownload size={14} className="mr-2" />
       Resume
     </a>
   );

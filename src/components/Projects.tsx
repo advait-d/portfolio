@@ -64,51 +64,62 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">Personal and Academic Projects</h2>
-      <ul className="space-y-12">
+    <section id="projects" className="mb-16">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-[#ccd6f6] mb-8 lg:hidden">
+        Personal and Academic Projects
+      </h2>
+      <div className="space-y-2">
         {projects.map((project, index) => (
-          <li key={index} className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/3 mb-4 md:mb-0 md:mr-6">
+          <div key={index} className="spotlight-card group">
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* Image column */}
+              <div className="sm:w-[140px] flex-shrink-0">
                 <Image 
                   src={project.image} 
                   alt={project.name} 
-                  width={300} 
-                  height={200} 
-                  className="rounded-lg object-cover shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  width={140} 
+                  height={90} 
+                  className="rounded-md object-cover border border-[#233554] group-hover:border-[#64ffda]/30 transition-all duration-300 opacity-70 group-hover:opacity-100"
                 />
               </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-semibold mb-3 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">{project.name}</h3>
-                <ul className="space-y-2 text-black dark:text-gray-300  bg-white dark:bg-[#111111] mb-4">
+
+              {/* Content column */}
+              <div className="flex-grow">
+                <h3 className="card-title text-base font-semibold text-[#ccd6f6] transition-colors duration-300 flex items-center gap-1 mb-2">
+                  {project.name}
+                  <span className="card-arrow inline-block text-[#8892b0] transition-transform duration-300 text-sm">↗</span>
+                </h3>
+
+                <ul className="space-y-1 text-sm text-[#8892b0] leading-relaxed mb-3">
                   {project.description.map((point, pointIndex) => (
                     <li key={pointIndex} className="flex items-start">
-                      <span className="mr-2 mt-1.5 text-black dark:text-gray-500  bg-white dark:bg-[#111111]">•</span>
+                      <span className="mr-2 mt-0.5 text-[#64ffda] text-xs">▹</span>
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
+
                 <ChipList items={project.technologies} category="frameworks" />
-                <div className="flex space-x-4 mt-4">
+
+                <div className="flex space-x-4 mt-3">
                   {project.githubLink && (
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 dark:text-gray-300  bg-white dark:bg-[#111111] hover:text-black dark:hover:text-white transition-colors duration-300">
-                      <FaGithub className="mr-2" />
-                      <span>View Code</span>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm text-[#8892b0] hover:text-[#64ffda] transition-colors duration-300">
+                      <FaGithub className="mr-1.5" />
+                      <span>Code</span>
                     </a>
                   )}
                   {project.liveLink && (
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 dark:text-gray-300  bg-white dark:bg-[#111111] hover:text-black dark:hover:text-white transition-colors duration-300">
-                      <FaExternalLinkAlt className="mr-2" />
-                      <span>Live Demo</span>
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm text-[#8892b0] hover:text-[#64ffda] transition-colors duration-300">
+                      <FaExternalLinkAlt className="mr-1.5 text-xs" />
+                      <span>Demo</span>
                     </a>
                   )}
                 </div>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

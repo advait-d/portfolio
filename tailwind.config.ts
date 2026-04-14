@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,8 +10,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        navy: {
+          DEFAULT: '#0a192f',
+          light: '#112240',
+          lightest: '#233554',
+        },
+        slate: {
+          DEFAULT: '#8892b0',
+          light: '#a8b2d1',
+          lightest: '#ccd6f6',
+        },
+        teal: {
+          DEFAULT: '#64ffda',
+          dim: 'rgba(100, 255, 218, 0.1)',
+        },
+        background: "var(--navy)",
+        foreground: "var(--slate-lightest)",
+      },
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       keyframes: {
         marquee: {
@@ -24,27 +40,30 @@ const config: Config = {
         DEFAULT: {
           css: {
             maxWidth: 'none',
-            color: 'inherit',
+            color: '#8892b0',
             a: {
-              color: 'inherit',
-              textDecoration: 'underline',
+              color: '#64ffda',
+              textDecoration: 'none',
               fontWeight: '500',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
             },
             h1: {
-              color: 'inherit',
+              color: '#ccd6f6',
             },
             h2: {
-              color: 'inherit',
+              color: '#ccd6f6',
             },
             h3: {
-              color: 'inherit',
+              color: '#ccd6f6',
             },
             h4: {
-              color: 'inherit',
+              color: '#ccd6f6',
             },
             code: {
-              color: 'inherit',
-              backgroundColor: 'rgb(0 0 0 / 0.1)',
+              color: '#ccd6f6',
+              backgroundColor: 'rgba(100, 255, 218, 0.1)',
               borderRadius: '0.25rem',
               paddingLeft: '0.25rem',
               paddingRight: '0.25rem',
@@ -58,11 +77,11 @@ const config: Config = {
               content: 'none',
             },
             pre: {
-              backgroundColor: 'rgb(0 0 0 / 0.1)',
-              color: 'inherit',
+              backgroundColor: '#112240',
+              color: '#ccd6f6',
             },
             strong: {
-              color: 'inherit',
+              color: '#ccd6f6',
             },
           },
         },

@@ -12,16 +12,16 @@ const skills: { [key in SkillCategory]: string[] } = {
 
 const Skills: React.FC = () => {
   return (
-    <div>
-       <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">Skills</h2>
+    <section id="skills" className="mb-16">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-[#ccd6f6] mb-8 lg:hidden">Skills</h2>
       
       {(Object.entries(skills) as [SkillCategory, string[]][]).map(([category, items]) => (
-        <div key={category} className="mb-4">
-          <h4 className="text-xl font-semibold mb-2 text-black dark:text-gray-200  bg-white dark:bg-[#111111] capitalize">{category}</h4>
+        <div key={category} className="mb-5">
+          <h4 className="text-sm font-semibold mb-2 text-[#a8b2d1] capitalize">{category}</h4>
           <ChipList items={items} category={category} />
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

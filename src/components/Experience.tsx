@@ -96,48 +96,60 @@ const experiences: Job[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">Experience</h2>
-      <div className="space-y-6">
+    <section id="experience" className="mb-16">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-[#ccd6f6] mb-8 lg:hidden">
+        Experience
+      </h2>
+      <div className="space-y-2">
         {experiences.map((job, index) => (
-          <div
+          <a
             key={index}
-            className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600"
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            className="spotlight-card block group"
           >
-            <div className="flex items-start mb-2">
-              <div className="bg-white rounded-full p-0.5 mr-4 w-24 h-24 border border-gray dark:border-gray-200 flex-shrink-0">
-                <div className="relative w-full h-full rounded-full overflow-hidden">
-                  <Image
-                    src={job.logo}
-                    alt={`${job.company} logo`}
-                    fill
-                    sizes="(max-width: 96px) 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-2xl font-semibold text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
-                  {job.title}
-                </h3>
-                <p className="text-lg text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-                  {job.company} - {job.location}
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* Date column */}
+              <div className="sm:w-[140px] flex-shrink-0 pt-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#8892b0]/70">
+                  {job.period}
                 </p>
-                <p className="text-black dark:text-gray-400  bg-white dark:bg-[#111111]">{job.period}</p>
+              </div>
+
+              {/* Content column */}
+              <div className="flex-grow">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="bg-white rounded-md p-0.5 w-10 h-10 flex-shrink-0 overflow-hidden border border-[#233554]">
+                    <div className="relative w-full h-full rounded-sm overflow-hidden">
+                      <Image
+                        src={job.logo}
+                        alt={`${job.company} logo`}
+                        fill
+                        sizes="40px"
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="card-title text-base font-semibold text-[#ccd6f6] transition-colors duration-300 flex items-center gap-1">
+                      {job.title} · {job.company}
+                      <span className="card-arrow inline-block text-[#8892b0] transition-transform duration-300 text-sm">↗</span>
+                    </h3>
+                    <p className="text-sm text-[#8892b0]">
+                      {job.location}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-sm text-[#8892b0] leading-relaxed mb-3">
+                  {job.description}
+                </p>
+
+                <ChipList items={job.skills} category="frameworks" />
               </div>
             </div>
-            <ul className="space-y-2 text:black dark:text-gray-300 mb-4">
-              {job.description}
-              {/*{job.description.map((point, pointIndex) => (
-                <li key={pointIndex} className="flex items-start">
-                  <span className="mr-2 mt-1.5 text-gray-500">•</span>
-                  <span>{point}</span>
-                </li>
-              ))} */}
-            </ul>
-            <ChipList items={job.skills} category="frameworks" />
-          </div>
+          </a>
         ))}
       </div>
     </section>

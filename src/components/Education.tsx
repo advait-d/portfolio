@@ -78,47 +78,57 @@ const educationData = [
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6 text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
+    <section id="education" className="mb-16">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-[#ccd6f6] mb-8 lg:hidden">
         Education
       </h2>
-      <ul className="space-y-6">
+      <div className="space-y-2">
         {educationData.map((edu, index) => (
-          <li
+          <div
             key={index}
-            className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600"
+            className="spotlight-card group"
           >
-            <div className="flex items-start mb-2">
-              <div className="bg-white rounded-full p-2 mr-4 w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center overflow-hidden border border-gray dark:border-gray-200">
-                <Image
-                  src={edu.image}
-                  alt={`${edu.university} logo`}
-                  width={80}
-                  height={80}
-                  className="object-contain w-12 h-12 sm:w-20 sm:h-20"
-                />
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-gray-100  bg-white dark:bg-[#111111]">
-                  {edu.degree}
-                </h3>
-                <p className="text-base sm:text-lg text-black dark:text-gray-300  bg-white dark:bg-[#111111]">
-                  {edu.university}
-                </p>
-                <p className="text-sm sm:text-base text-black dark:text-gray-400  bg-white dark:bg-[#111111]">
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* Date column */}
+              <div className="sm:w-[140px] flex-shrink-0 pt-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#8892b0]/70">
                   {edu.period}
                 </p>
-                <details className="mt-2">
-                  <summary className="cursor-pointer text-gray-600 dark:text-gray-300  bg-white dark:bg-[#111111] hover:text-black dark:hover:text-white transition-colors duration-300 flex items-center">
-                    <FaChevronDown className="mr-2 inline-block details-open:hidden" />
-                    <FaChevronUp className="mr-2 hidden details-open:inline-block" />
+              </div>
+
+              {/* Content column */}
+              <div className="flex-grow">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="bg-white rounded-md p-1.5 w-12 h-12 flex-shrink-0 flex items-center justify-center overflow-hidden border border-[#233554]">
+                    <Image
+                      src={edu.image}
+                      alt={`${edu.university} logo`}
+                      width={36}
+                      height={36}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="card-title text-base font-semibold text-[#ccd6f6] transition-colors duration-300">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-sm text-[#8892b0]">
+                      {edu.university}
+                    </p>
+                  </div>
+                </div>
+
+                <details className="mt-3">
+                  <summary className="cursor-pointer text-[#8892b0] hover:text-[#64ffda] transition-colors duration-300 flex items-center text-sm">
+                    <FaChevronDown className="mr-2 inline-block details-open:hidden text-xs" />
+                    <FaChevronUp className="mr-2 hidden details-open:inline-block text-xs" />
                     <span>Coursework</span>
                   </summary>
-                  <ul className="mt-4 ml-4 space-y-2">
+                  <ul className="mt-3 ml-4 space-y-1.5">
                     {edu.units.map((unit, unitIndex) => (
                       <li
                         key={unitIndex}
-                        className="text-black dark:text-gray-300"
+                        className="text-sm text-[#8892b0]"
                       >
                         • {unit}
                       </li>
@@ -127,9 +137,9 @@ const Education: React.FC = () => {
                 </details>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };
