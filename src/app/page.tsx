@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import About from "../components/About";
 import Skills from "../components/Skills";
@@ -15,6 +15,7 @@ const SECTIONS = ["about", "skills", "experience", "education", "projects"];
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
+  const desktopContentRef = useRef<HTMLDivElement>(null);
 
   // Mouse-following gradient
   useEffect(() => {
@@ -34,7 +35,8 @@ export default function Home() {
       let currentSection = SECTIONS[0];
 
       for (const id of SECTIONS) {
-        const el = document.getElementById(id);
+        // Query within the desktop container to avoid matching hidden mobile-layout duplicates
+        const el = desktopContentRef.current?.querySelector<HTMLElement>(`#${id}`);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
         // A section is "active" when its top is at or above ~40% of the viewport
@@ -162,6 +164,7 @@ export default function Home() {
 
         {/* Right Column — scrollable content */}
         <motion.div
+          ref={desktopContentRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
