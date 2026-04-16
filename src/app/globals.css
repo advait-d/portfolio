@@ -29,11 +29,6 @@ html {
   scroll-padding-top: 6rem;
 }
 
-html, body {
-  height: 100%;
-  overflow: auto;
-}
-
 body {
   min-height: 100vh;
   margin: 0;
