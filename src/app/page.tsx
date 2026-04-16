@@ -102,11 +102,13 @@ export default function Home() {
           animate="visible"
           className="p-6 max-w-screen-sm mx-auto"
         >
-          <motion.div variants={itemVariants} className="mb-6">
+          <motion.div variants={itemVariants} className="mb-6 flex flex-col gap-6">
             <Header />
-            <PromoCards />
-            <div className="mt-6">
-              <SocialLinks />
+            <div>
+              <PromoCards />
+              <div className="mt-4">
+                <SocialLinks />
+              </div>
             </div>
           </motion.div>
           <motion.div variants={itemVariants}>
@@ -139,14 +141,14 @@ export default function Home() {
         >
           <div>
             <Header />
-            {/* Section navigation — positioned right after header info, above promo cards */}
-            <nav className="flex flex-col gap-3 mt-8">
+            {/* Section navigation — positioned below header info */}
+            <nav className="flex flex-col gap-4 mt-12 w-max">
               {SECTIONS.map((section) => (
                 <a
                   key={section}
                   href={`#${section}`}
                   onClick={(e) => handleNavClick(e, section)}
-                  className={`nav-link flex items-center gap-4 group py-1 ${
+                  className={`nav-link flex items-center gap-4 group py-2 ${
                     activeSection === section ? "active" : ""
                   }`}
                 >
@@ -163,9 +165,9 @@ export default function Home() {
                 </a>
               ))}
             </nav>
-            <PromoCards />
           </div>
-          <div className="pb-8">
+          <div className="pb-8 flex flex-col gap-6">
+            <PromoCards />
             <SocialLinks />
           </div>
         </motion.div>
