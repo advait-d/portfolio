@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import About from "../components/About";
 import Skills from "../components/Skills";
@@ -8,6 +8,7 @@ import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import SocialLinks from "../components/SocialLinks";
 import Education from "../components/Education";
+import PromoCards from "../components/PromoCards";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
@@ -30,7 +31,6 @@ export default function Home() {
   // Scroll-based active section tracking
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
       const viewportHeight = window.innerHeight;
       let currentSection = SECTIONS[0];
 
@@ -46,7 +46,7 @@ export default function Home() {
       }
 
       // If scrolled to the very bottom, activate the last section
-      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 50) {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
         currentSection = SECTIONS[SECTIONS.length - 1];
       }
 
@@ -54,10 +54,22 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run once on mount to set initial active section
-    handleScroll();
+    // Run once on mount after a brief delay to ensure the ref is populated
+    const timer = setTimeout(handleScroll, 100);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  // Click handler that scrolls to the correct (desktop) element
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const el = desktopContentRef.current?.querySelector<HTMLElement>(`#${sectionId}`);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   const containerVariants = {
@@ -81,31 +93,6 @@ export default function Home() {
     },
   };
 
-  const SectionNav = () => (
-    <nav className="hidden lg:flex flex-col gap-3 mt-12">
-      {SECTIONS.map((section) => (
-        <a
-          key={section}
-          href={`#${section}`}
-          className={`nav-link flex items-center gap-4 group py-1 ${
-            activeSection === section ? "active" : ""
-          }`}
-        >
-          <span className="nav-indicator" />
-          <span
-            className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-              activeSection === section
-                ? "text-[#ccd6f6]"
-                : "text-[#8892b0] group-hover:text-[#ccd6f6]"
-            }`}
-          >
-            {section}
-          </span>
-        </a>
-      ))}
-    </nav>
-  );
-
   return (
     <div className="relative min-h-screen">
       {/* Mouse-following gradient */}
@@ -121,6 +108,7 @@ export default function Home() {
         >
           <motion.div variants={itemVariants} className="mb-6">
             <Header />
+            <PromoCards />
             <div className="mt-6">
               <SocialLinks />
             </div>
@@ -155,7 +143,31 @@ export default function Home() {
         >
           <div>
             <Header />
-            <SectionNav />
+            {/* Section navigation — positioned right after header info, above promo cards */}
+            <nav className="flex flex-col gap-3 mt-8">
+              {SECTIONS.map((section) => (
+                <a
+                  key={section}
+                  href={`#${section}`}
+                  onClick={(e) => handleNavClick(e, section)}
+                  className={`nav-link flex items-center gap-4 group py-1 ${
+                    activeSection === section ? "active" : ""
+                  }`}
+                >
+                  <span className="nav-indicator" />
+                  <span
+                    className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
+                      activeSection === section
+                        ? "text-[#ccd6f6]"
+                        : "text-[#8892b0] group-hover:text-[#ccd6f6]"
+                    }`}
+                  >
+                    {section}
+                  </span>
+                </a>
+              ))}
+            </nav>
+            <PromoCards />
           </div>
           <div className="pb-8">
             <SocialLinks />
