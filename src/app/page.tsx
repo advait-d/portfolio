@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Header from "../components/Header";
 import About from "../components/About";
 import Skills from "../components/Skills";
@@ -16,7 +16,6 @@ const SECTIONS = ["about", "skills", "experience", "education", "projects"];
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
-  const desktopContentRef = useRef<HTMLDivElement>(null);
 
   // Mouse-following gradient
   useEffect(() => {
@@ -28,15 +27,15 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Scroll-based active section tracking
+  // Scroll-based active section tracking using data-section attributes
+  // (avoids the duplicate-id problem between mobile/desktop layouts)
   useEffect(() => {
     const handleScroll = () => {
       const viewportHeight = window.innerHeight;
       let currentSection = SECTIONS[0];
 
       for (const id of SECTIONS) {
-        // Query within the desktop container to avoid matching hidden mobile-layout duplicates
-        const el = desktopContentRef.current?.querySelector<HTMLElement>(`#${id}`);
+        const el = document.querySelector<HTMLElement>(`[data-section="${id}"]`);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
         // A section is "active" when its top is at or above ~40% of the viewport
@@ -54,19 +53,16 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run once on mount after a brief delay to ensure the ref is populated
-    const timer = setTimeout(handleScroll, 100);
+    // Run once on mount to set initial active section
+    handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(timer);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Click handler that scrolls to the correct (desktop) element
+  // Click handler that scrolls to the correct desktop element
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    const el = desktopContentRef.current?.querySelector<HTMLElement>(`#${sectionId}`);
+    const el = document.querySelector<HTMLElement>(`[data-section="${sectionId}"]`);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
@@ -139,7 +135,7 @@ export default function Home() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="lg:fixed lg:w-2/5 h-screen p-8 lg:p-12 lg:pl-[10%] flex flex-col justify-between min-w-[300px] max-w-[800px]"
+          className="lg:fixed lg:w-2/5 h-screen p-8 lg:p-12 lg:pl-[10%] flex flex-col justify-between min-w-[300px] max-w-[800px] overflow-y-auto hide-scrollbar"
         >
           <div>
             <Header />
@@ -175,37 +171,39 @@ export default function Home() {
         </motion.div>
 
         {/* Right Column — scrollable content */}
-        <motion.div
-          ref={desktopContentRef}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="lg:ml-[40%] w-full lg:w-3/5 min-h-screen min-w-[300px] max-w-[1200px] mx-auto"
-        >
-          <motion.main
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="p-8 lg:p-12 lg:pr-[10%]"
+        <div className="lg:ml-[40%] w-full lg:w-3/5 min-h-screen min-w-[300px] max-w-[1200px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <motion.div variants={itemVariants}>
-              <About />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <Skills />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <Experience />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <Education />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <Projects />
-            </motion.div>
-          </motion.main>
-          <Footer />
-        </motion.div>
+            <motion.main
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="p-8 lg:p-12 lg:pr-[10%]"
+            >
+              {/* data-section attributes are used by scroll-spy and nav clicks
+                  to target the correct desktop element (avoids duplicate id issues) */}
+              <motion.div variants={itemVariants} data-section="about">
+                <About />
+              </motion.div>
+              <motion.div variants={itemVariants} data-section="skills">
+                <Skills />
+              </motion.div>
+              <motion.div variants={itemVariants} data-section="experience">
+                <Experience />
+              </motion.div>
+              <motion.div variants={itemVariants} data-section="education">
+                <Education />
+              </motion.div>
+              <motion.div variants={itemVariants} data-section="projects">
+                <Projects />
+              </motion.div>
+            </motion.main>
+            <Footer />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
