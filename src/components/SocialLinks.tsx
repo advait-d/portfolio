@@ -1,16 +1,10 @@
 // SocialLinks.tsx
 import React from "react";
 import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
-import ResumeButton from "../components/ResumeButton";
-import BlogButton from "./blog/BlogButton";
 
 const SocialLinks: React.FC = () => {
   return (
     <div className="flex gap-4 items-center">
-      <div className="flex items-center gap-3">
-        <ResumeButton />
-        <BlogButton />
-      </div>
       <a
         href="https://github.com/advait-d"
         target="_blank"

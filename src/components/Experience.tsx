@@ -152,6 +152,19 @@ const Experience: React.FC = () => {
           </a>
         ))}
       </div>
+      <div className="mt-8">
+        <a
+          href="/Advait Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300 font-semibold group"
+        >
+          View Full Resume
+          <span className="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 ml-2 text-sm">
+            ↗
+          </span>
+        </a>
+      </div>
     </section>
   );
 };
