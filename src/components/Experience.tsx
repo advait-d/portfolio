@@ -154,7 +154,7 @@ const Experience: React.FC = () => {
       </div>
       <div className="mt-8">
         <a
-          href="/Advait Resume.pdf"
+          href="/Advait Deshmukh Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300 font-semibold group"
