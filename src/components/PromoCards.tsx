@@ -36,10 +36,10 @@ const PromoCards: React.FC = () => {
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-[#ccd6f6] font-semibold">
-                  🎓  System Design Guide
+                  🎓 Software Engineering Interview Mastery Guide
                 </p>
                 <p className="text-[#8892b0] text-sm mt-1">
-                  Deep dive into scalability &amp; distributed systems
+                  Premium explanation of deep concepts, trade-off analysis, and real-world architecture patterns built for top-tier engineering interviews.
                 </p>
               </div>
               <span className="text-[#64ffda] group-hover:translate-x-1 transition-transform duration-300">→</span>
