@@ -13,84 +13,53 @@ interface Job {
 }
 
 const experiences: Job[] = [
-    {
+  {
     title: "Software Engineer (Consultant)",
     company: "Capgemini",
     location: "Bangalore, India",
     period: "Mar 2025 - Present",
     description: [
-      "Provide end-to-end software engineering solutions for retail banking systems, contributing to critical operational and functional improvements across digital banking, customer onboarding, and transaction processing platforms.",
+      "Architecting scalable, event-driven microservices for large-scale retail banking platforms. ",
+      "Implementing robust messaging patterns to guarantee data consistency and leading major tech-stack modernizations across the core infrastructure."
     ],
     logo: "/company logos/capgemini.jpg",
-    skills: [
-      "Java",
-      "Spring Boot",
-      "Azure DevOps",
-      "PostgreSQL",
-      "GraphQL",
-    ],
+    skills: ["Java", "Spring Boot", "Quarkus", "PostgreSQL", "Solace", "Microservices"],
   },
   {
     title: "Senior Software Engineer",
-    company: "World Vision Infotech Pvt Ltd",
+    company: "World Vision Infotech",
     location: "Pune, India",
-    period: "Jan 2024 - Feb 2025",
+    period: "Sep 2024 - Feb 2025",
     description: [
-      "Deliver full-stack engineering solutions to clients, including a custom Resource Management System (RMS), automate customer enquiries with AI-powered chatbot, streamline CI/CD pipelines, along with leading a team of software engineers with best Agile practices.",
+      "Architected and deployed production-grade LLM applications to automate complex customer service workflows. ",
+      "Designed multi-turn context pipelines and robust fallback strategies, significantly improving operational efficiency and reducing support overhead."
     ],
     logo: "/company logos/WVIT.png",
-    skills: [
-      "Java",
-      "Spring Boot",
-      "Python",
-      "NextJS",
-      "Angular",
-      "Ionic",
-      "Flask",
-      "OpenAI API",
-      "Jenkins",
-      "PostgreSQL",
-      "Microsoft Power Platform",
-    ],
+    skills: ["Python", "FastAPI", "OpenAI API", "Prompt Engineering", "LLMs"],
   },
   {
     title: "Technical Consultant",
     company: "Perficient Inc",
-    location: "Redmond, Washington, USA",
-    period: "April 2022 - December 2023",
+    location: "Redmond, WA, USA",
+    period: "Apr 2022 - Dec 2023",
     description: [
-      "Develop and maintain robust back-end systems for high-volume Data Processing APIs and Data Analytics applications within the Healthcare Industry. Partner with cross-functional teams to optimize legacy systems, automate testing and workflows, and improve system performance, ensuring scalability and high availability across diverse use cases.",
+      "Engineered high-throughput REST APIs and backend services for the healthcare sector, optimizing critical data processing workflows. ",
+      "Ensured system reliability and high availability for mission-critical applications handling sensitive pharmaceutical data."
     ],
     logo: "/company logos/Perficient_Logo.png",
-    skills: [
-      "Java",
-      "Spring Boot",
-      "Oracle SQL Developer",
-      "BFF",
-      "Microservices",
-      "Kafka",
-      "Cucumber/Gherkin",
-      "ServiceNow",
-    ],
+    skills: ["Java", "Spring Boot", "Oracle SQL", "PostgreSQL", "JAX-RS", "Cucumber"],
   },
   {
     title: "Software Development Engineer",
-    company: "Amazon.com",
-    location: "Seattle, Washington, USA",
-    period: "June 2020 - March 2022",
+    company: "Amazon",
+    location: "Seattle, WA, USA",
+    period: "June 2020 - Mar 2022",
     description: [
-      "Build and maintain scalable solutions for internal risk mitigation services, including CAPTCHAs and challenges. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and improve risk mitigation solutions.",
+      "Owned the end-to-end design and delivery of large-scale risk mitigation systems, successfully reducing fraudulent activity across massive consumer surfaces. ",
+      "Redesigned core validation architectures to significantly improve latency and system resilience at high scale."
     ],
     logo: "/company logos/amazon-logo.png",
-    skills: [
-      "Java",
-      "Spring MVC",
-      "AWS",
-      "Pub-Sub",
-      "TypeScript",
-      "Jupyter Notebooks",
-      "Microservices",
-    ],
+    skills: ["Java", "AWS SQS/SNS", "AWS Lambda", "DynamoDB", "Microservices"],
   },
 ];
 
