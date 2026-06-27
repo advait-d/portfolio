@@ -10,11 +10,11 @@ const Header: React.FC = () => {
         </h1>
 
         <h2 className="text-lg sm:text-xl text-[#ccd6f6] font-medium mb-4">
-          An Engineer
+          An Engineer.
         </h2>
 
         <p className="text-[#8892b0] text-base max-w-xs leading-relaxed">
-          Turning ideas into solutions that make a difference.
+          Building AI and Backend Architectures at Scale.
         </p>
 
         <h3 className="text-sm text-[#8892b0] mt-4 mb-2">
