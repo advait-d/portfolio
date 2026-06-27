@@ -15,21 +15,6 @@ const PromoCards: React.FC = () => {
           Looking for Back-end Engineering, AI Roles <br /> Open to Bangalore/Mumbai/Pune or Remote
         </p>
       </a>
-      
-      <a
-        href="https://system-design-mastery.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block"
-      >
-        <h3 className="text-base font-semibold text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300 flex items-center gap-1 mb-2">
-          🎓 SuperInterview
-          <span className="inline-block transition-transform duration-300 text-sm group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-        </h3>
-        <p className="text-[#8892b0] text-sm leading-relaxed">
-          Explore the Complete SWE Interview Guide.
-        </p>
-      </a>
     </div>
   );
 };
