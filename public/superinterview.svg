@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#09090b" rx="20"/>
+  <g transform="translate(3, 0) skewX(-12)">
+    <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="52" letter-spacing="-2">
+      <tspan fill="#14b8a6">S</tspan><tspan fill="#ffffff">I</tspan>
+    </text>
+  </g>
+</svg>

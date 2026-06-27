@@ -14,6 +14,27 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "SuperInterview",
+    description: [
+      "A comprehensive web platform dedicated to mastering distributed systems and low-level design.",
+      "Features an interactive curriculum, mock interviews, AI-assisted learning, and an integrated code playground to prepare candidates for staff-level engineering roles."
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase"],
+    image: "/superinterview.svg",
+    githubLink: "https://github.com/advait-d/system-design-mastery",
+    liveLink: "https://system-design-mastery.vercel.app/",
+  },
+  {
+    name: "System Design Learning Assistant",
+    description: [
+      "An interactive AI learning assistant designed to help software engineers master system design concepts.",
+      "Leverages LLMs to provide real-time feedback, explain complex architectural patterns, and simulate system design interviews interactively."
+    ],
+    technologies: ["Python", "AI", "LLMs"],
+    image: "/sd-assistant.png",
+    githubLink: "https://github.com/advait-d/SdLearningAssistant",
+  },
+  {
     name: "OTT Platform with a Headless CMS - Directus",
     description: [
       "An OTT (Over-the-Top) platform designed to provide users with seamless access to TV shows, movies, and other content.",
@@ -40,7 +61,7 @@ const projects: Project[] = [
     name: "Image Stitching",
     description: [
       "Performed Image Stitching on multiple images taken at different horizontal orientations with overlapping areas to get a single panoramic image.",
-      "Used Scale Invariant Feature Transform (SIFT) provided by OpenCV (3.4.2.17) to extract keypoints and descriptors.", 
+      "Used Scale Invariant Feature Transform (SIFT) provided by OpenCV (3.4.2.17) to extract keypoints and descriptors.",
       "Manually performed keypoint matching without using OpenCV's BFMatcher or FlannBasedMatcher using the Euclidean Distance between their corresponding descriptors.",
       "Computed the Homography Matrix manually without the use of OpenCV's findHomography method.",
       "Performed Image Blending to stitch multiple images."
@@ -74,11 +95,11 @@ const Projects: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Image column */}
               <div className="sm:w-[140px] flex-shrink-0">
-                <Image 
-                  src={project.image} 
-                  alt={project.name} 
-                  width={140} 
-                  height={90} 
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={140}
+                  height={90}
                   className="rounded-md object-cover border border-[#233554] group-hover:border-[#64ffda]/30 transition-all duration-300 opacity-70 group-hover:opacity-100"
                 />
               </div>
