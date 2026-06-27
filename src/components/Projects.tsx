@@ -10,6 +10,7 @@ interface Project {
   image: string;
   githubLink?: string;
   liveLink?: string;
+  live?: string;
 }
 
 const projects: Project[] = [
@@ -22,7 +23,7 @@ const projects: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase"],
     image: "/superinterview.svg",
     githubLink: "https://github.com/advait-d/system-design-mastery",
-    liveLink: "https://system-design-mastery.vercel.app/",
+    live: "https://v0-system-design-mastery.vercel.app/",
   },
   {
     name: "System Design Learning Assistant",
@@ -133,6 +134,12 @@ const Projects: React.FC = () => {
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm text-[#8892b0] hover:text-[#64ffda] transition-colors duration-300">
                       <FaExternalLinkAlt className="mr-1.5 text-xs" />
                       <span>Demo</span>
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm text-[#8892b0] hover:text-[#64ffda] transition-colors duration-300">
+                      <FaExternalLinkAlt className="mr-1.5 text-xs" />
+                      <span>Live</span>
                     </a>
                   )}
                 </div>

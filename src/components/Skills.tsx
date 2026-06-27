@@ -38,7 +38,7 @@ const Skills: React.FC = () => {
               <div className="text-[#64ffda] text-[13px] font-mono mb-2 opacity-90">
                 {area.technologies}
               </div>
-              <div className="text-[#8892b0] text-sm leading-relaxed">
+              <div className="text-[#a8b2d1] text-sm leading-relaxed">
                 {area.description}
               </div>
             </div>

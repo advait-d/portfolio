@@ -25,9 +25,9 @@ const About: React.FC = () => {
       </p>
       <p className="mb-6 text-[#8892b0] leading-relaxed">
         When I'm not coding, I&#39;m exploring new places and experiences,{' '}
-        <a 
-          href="https://www.strava.com/athletes/120094970" 
-          target="_blank" 
+        <a
+          href="https://www.strava.com/athletes/120094970"
+          target="_blank"
           rel="noopener noreferrer"
           className="text-[#64ffda] hover:underline transition-colors duration-200"
         >
